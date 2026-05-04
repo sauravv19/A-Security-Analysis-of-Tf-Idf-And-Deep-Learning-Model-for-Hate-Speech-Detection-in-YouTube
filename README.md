@@ -67,11 +67,23 @@ This repository presents a deep learning-based pipeline for detecting hate speec
 ## 🏗️ System Architecture
 
 ```
-Whisper Large (ASR)
-        ↓
-RoBERTa (Classifier)
-        ↓
-Results 
+User (Browser)
+      ↓
+Frontend UI (HTML / JS - Vercel)
+      ↓
+HTTP Request (POST /analyze) Backend API (Flask - Colab via ngrok)
+      ↓
+Audio Extraction (yt-dlp)
+      ↓
+Speech-to-Text (Whisper Large)
+      ↓
+Text Processing (Chunking)
+      ↓
+Hate Speech Classification (RoBERTa)
+      ↓
+JSON Response
+      ↓
+Frontend Visualization (Charts + Metrics)
 ```
 
 ---
